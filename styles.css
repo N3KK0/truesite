@@ -1,0 +1,25 @@
+:root {
+  --color-dark: #0f0505;
+  --color-dark-blue: #1E2A47;
+  --color-light-blue: #546a92;
+  --color-navy: #1f2937;
+  --color-dark-red: #8B0000;
+  --color-gold: #C1A260;
+  --color-red-gradient: #C54D4D;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+/* === BASE STYLES === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-playfair);
+  background-color: var(--color-dark);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
