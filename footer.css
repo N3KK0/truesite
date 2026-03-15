@@ -1,0 +1,32 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #FFFACD; /* Couleur jaune pastel pour imiter le sable */
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+footer a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer img {
+    width: 60px; /* Logos en gros */
+    height: auto;
+    border-radius: 5px; /* Léger arrondi pour un look moderne */
+}

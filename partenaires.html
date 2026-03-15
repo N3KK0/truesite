@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
@@ -22,7 +23,9 @@
         </ul>
     </nav>
 
-    <h1>Nos Partenaires</h1>
+    
+    <main>
+<h1>Nos Partenaires</h1>
 
     <section>
         <h2>Partenaire 1</h2>
@@ -32,20 +35,17 @@
     <section>
         <h2>Partenaire 2</h2>
         <p>Description du partenaire 2.</p>
-    </section>
+    </section>    </main>
 
-    <footer>
-        <p>© 2025, 2026 Pirat'eirb</p>
-        <a href="URL-destination">
-            <img src="assets/chemin-vers-l-image.jpg" alt="Instagram : @pirateirb" title="Instagram : @pirateirb">
-        </a>
-        <a href="URL-destination">
-            <img src="assets/chemin-vers-l-image.jpg" alt="TikTok : @pirateirb" title="TikTok : @pirateirb">
-        </a>
-        <a href="URL-destination">
-            <img src="assets/chemin-vers-l-image.jpg" alt="Telegram" title="Telegram">
-        </a>
-    </footer>
+
+        <div id="site-footer"></div>
+    <script>
+        fetch("footer.html")
+          .then(r => r.text())
+          .then(html => { document.getElementById("site-footer").innerHTML = html; })
+          .catch(err => console.error("Failed to load footer:", err));
+    </script>
+
     
 </body>
 
