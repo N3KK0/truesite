@@ -8,48 +8,125 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: var(--font-spaceGro);
   background-color: var(--color-fond);
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+ }
+
 
 .hero {
   position: relative;
+  width: 100%;
+  height: 400vh;
+
+}
+
+.parallax-viewport {
+  position: sticky;
+  top: 0;
+  width: 100%;
   height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 0 1.5rem;
-
-  /* Remplacez ces couleurs par une image vraie si vous en avez une */
-  background: linear-gradient(180deg, #2a9df4 0%, #1f68b3 55%, #1e4f7a 65%, #14735e 80%, #f4d08a 92%, #f5e8c7 100%);
-  background-attachment: fixed;
-  background-size: cover;
 }
 
-.hero::after {
-  content: "";
+
+.parallax {
+  position: absolute;
+  inset: 0;             /* équivaut à top/right/bottom/left: 0 */
+  list-style-type: none;
+  pointer-events: none; /* les calques ne captent pas les clics */
+}
+
+.layer {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.35), transparent 55%);
-  pointer-events: none;
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+
+.layer:nth-of-type(1) {
+  background-image: url('./assets/backgrouond/beach1.png');
+  background-size: cover;
+  background-position: center top;
+  z-index: 1;
+}
+
+
+.layer:nth-of-type(2) {
+  background-image: url('./assets/backgrouond/beach2.png');
+  background-size: cover;
+  background-position: center 10%;
+  z-index: 2;
+}
+.layer:nth-of-type(3) {
+  background-image: url('./assets/backgrouond/ship.png');
+  background-size: 15%;
+  background-position: 70em 78%;
+  z-index: 3;
+}
+.layer:nth-of-type(4) {
+  background-image: url('./assets/backgrouond/beach3.png');
+  background-size: cover;
+  background-position: center 10%;
+  z-index: 4;
+}
+
+/* Calque 4 — herbes */
+.layer:nth-of-type(5) {
+  background-image: url('./assets/backgrouond/beach4.png');
+  background-size: cover;
+  background-position: center 10%;
+  z-index: 5;
+}
+
+/* ================================================
+   CONTENU DU HERO
+   z-index élevé pour flotter AU-DESSUS des calques.
+================================================= */
+/* 3. hero__content n'a plus besoin d'être sticky lui-même */
 .hero__content {
-  position: relative;
+  position: relative;     /* plus sticky ici, le viewport s'en charge */
+  z-index: 10;
   max-width: 700px;
   color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
 }
 
+.hero__content:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.08);
+  transition: transform 0.18s ease;
+}
+
+/* ================================================
+   SECTION CONTENU SABLE (inchangée)  
+================================================= */
 .content--sand {
   min-height: 100vh;
   padding: 4rem 1.5rem;
-  background: linear-gradient(180deg, rgba(244, 208, 138, 0.9) 0%, rgba(245, 232, 199, 0.95) 45%, rgba(255, 255, 255, 0.9) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(244, 208, 138, 0.9) 0%,
+    rgba(245, 232, 199, 0.95) 45%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
   background-attachment: fixed;
   background-size: cover;
   color: #1f1f1f;
@@ -61,11 +138,4 @@ body {
 
 .content {
   padding: 3rem 1.5rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+}                                                                                                                 

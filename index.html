@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -8,12 +7,9 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png">
-    
-
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="footer.css">
 </head>
-
 <body>
     <nav class="navbar">
         <a href="index.html" class="logo">Pirat'eirb</a>
@@ -25,25 +21,72 @@
             <li><a href="allo.html">Allo</a></li>
         </ul>
     </nav>
-
-    
+ 
     <main>
+
         <section class="hero">
+        <div class="parallax-viewport">
+               <ul class="parallax">
+                <li class="layer"></li>
+                <li class="layer"></li>
+                <li class="layer"></li>
+                <li class="layer"></li>
+                <li class="layer"></li>
+            </ul> 
             <div class="hero__content">
                 <h1>Brasse</h1>
-                <p>Faut que quelqu'un me fasse une brasse. Parce que je sais pas brasser.</p>
+                <p>As pupils begin to develop their fluency in Latin reading and unseen translation, and begin to dig into the writing of some of the trickier Roman prose authors who form part of their Sixth Form syllabuses, they start to have to translate long sentences. Usually they find this difficult. No other Latin sentence is as lengthy as the 279 words of the longest sentence we have on record in Classical Latin (from Cicero’s De Oratore, 202-5), but many sentences in e.g. Livy do stretch on, covering several lines of a modern edition.
+
+Short Latin sentences can often be read fluently and without much pause for thought. Long sentences, however, often require thorough and painstaking treatment. Breaking them down into their essential elements is wise, especially when you’re making your first attempts at dealing with them.
+
+Here below I offer 5 (now 8 – after an edit) small suggestions on how to tackle the task of translating longer prose sentences when you’re first starting out. The suggestions are intended chiefly for my students – but maybe others will also find them useful. I would be very happy for others to add further suggestions in the comments!
+
+    Use every clue the modern 
+</p>
             </div>
+        </div>
+            
+ 
+            
         </section>
     </main>
-
-    
-        <div class="site-footer" id="site-footer"></div>
+ 
+    <div class="site-footer" id="site-footer"></div>
+ 
     <script>
         fetch("footer.html")
-          .then(r => r.text())
-          .then(html => { document.getElementById("site-footer").innerHTML = html; })
-          .catch(err => console.error("Failed to load footer:", err));
+            .then(r => r.text())
+            .then(html => { document.getElementById("site-footer").innerHTML = html; })
+            .catch(err => console.error("Failed to load footer:", err));
     </script>
+ 
 
+    <script>
+        const layers = document.querySelectorAll('.layer');
+
+        const config = [
+          { offset:  0,  speed: 0    }, // sky   — fixe, toujours visible
+          { offset:  10,  speed: 0.08 }, // mer   — visible dès le départ, bouge doucement
+          { offset: 20,  speed: 0.1 }, // ship  — apparaît après peu de scroll
+          { offset: 30,  speed: 0.05 }, // beach — nécessite ~2 écrans de scroll
+          { offset: 30,  speed: 0.05  }, // grass — premier plan, rapide
+        ];
+
+        function parallax() {
+          const y = window.scrollY;
+          const vh = window.innerHeight / 100;
+        
+          layers.forEach((layer, i) => {
+            const { offset, speed } = config[i];
+            // offset pousse vers le bas au départ
+            // speed * y remonte progressivement au scroll
+            const move = (offset * vh) - (speed * y);
+            layer.style.transform = `translateY(${move}px)`;
+          });
+        }
+
+        window.addEventListener('scroll', parallax, false);
+        parallax(); // applique les positions initiales sans attendre le scroll
+    </script>
 </body>
 </html>

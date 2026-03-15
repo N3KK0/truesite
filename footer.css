@@ -1,5 +1,7 @@
 body {
-    min-height: 100vh;
+    /* Ce min-height vient de footer.css (chargé après styles.css),
+       donc il écrase toute valeur définie ailleurs */
+    min-height: fit-content; /* augmente la hauteur minimale pour plus de scroll */
     display: flex;
     flex-direction: column;
     background-color: var(--color-fond);
@@ -36,13 +38,12 @@ footer {
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.01);
     border-radius: 30px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 -4px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.2px);
     -webkit-backdrop-filter: blur(3.2px);
     border: 1px solid rgba(255, 255, 255, 0.26);
     padding: 1px 2px;
 
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 
