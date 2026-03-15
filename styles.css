@@ -17,25 +17,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Parallax hero: mer + bateau + ciel */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+
+  /* Remplacez ces couleurs par une image vraie si vous en avez une */
+  background: linear-gradient(180deg, #2a9df4 0%, #1f68b3 55%, #1e4f7a 65%, #14735e 80%, #f4d08a 92%, #f5e8c7 100%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.35), transparent 55%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  max-width: 700px;
+  color: #fff;
+}
+
+/* Section sable/plage qui défile */
+.content--sand {
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(180deg, rgba(244, 208, 138, 0.9) 0%, rgba(245, 232, 199, 0.95) 45%, rgba(255, 255, 255, 0.9) 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #1f1f1f;
+}
+
+.content--sand h2 {
+  color: #0c2d3b;
+}
+
+.content {
+  padding: 3rem 1.5rem;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
-    background: var(--color-fond);
 }
 
-
-
-
-
-
-/*footer*/
-.footer-content{
-    background-color: transparent;
-    border: 5px solid #000000;
-    padding: 8px;
-    text-align: center;
-    border-radius: 50px;
-    margin: 0 10px;
-}
