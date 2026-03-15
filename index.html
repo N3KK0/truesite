@@ -65,11 +65,11 @@ Here below I offer 5 (now 8 – after an edit) small suggestions on how to tackl
         const layers = document.querySelectorAll('.layer');
 
         const config = [
-          { offset:  0,  speed: 0    }, // sky   — fixe, toujours visible
+          { offset:  0,  speed: 0.1    }, // sky   — fixe, toujours visible
           { offset:  10,  speed: 0.08 }, // mer   — visible dès le départ, bouge doucement
           { offset: 20,  speed: 0.1 }, // ship  — apparaît après peu de scroll
           { offset: 30,  speed: 0.05 }, // beach — nécessite ~2 écrans de scroll
-          { offset: 30,  speed: 0.05  }, // grass — premier plan, rapide
+          { offset: 100,  speed: 0.2   }, // grass — premier plan, rapide
         ];
 
         function parallax() {
@@ -85,7 +85,7 @@ Here below I offer 5 (now 8 – after an edit) small suggestions on how to tackl
           });
         }
 
-        window.addEventListener('scroll', parallax, false);
+        window.addEventListener('scroll', parallax, true);
         parallax(); // applique les positions initiales sans attendre le scroll
     </script>
 </body>
