@@ -25,6 +25,8 @@ footer {
     background: transparent;
     pointer-events: none;
     z-index: 999;
+    height: clamp(50px, 10vh, 80px);
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
 }
 .site-footer {
     background-color: transparent;

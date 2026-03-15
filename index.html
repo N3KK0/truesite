@@ -21,72 +21,160 @@
             <li><a href="allo.html">Allo</a></li>
         </ul>
     </nav>
- 
+
     <main>
-
         <section class="hero">
-        <div class="parallax-viewport">
-               <ul class="parallax">
-                <li class="layer"></li>
-                <li class="layer"></li>
-                <li class="layer"></li>
-                <li class="layer"></li>
-                <li class="layer"></li>
-            </ul> 
-            <div class="hero__content">
-                <h1>Brasse</h1>
-                <p>As pupils begin to develop their fluency in Latin reading and unseen translation, and begin to dig into the writing of some of the trickier Roman prose authors who form part of their Sixth Form syllabuses, they start to have to translate long sentences. Usually they find this difficult. No other Latin sentence is as lengthy as the 279 words of the longest sentence we have on record in Classical Latin (from Cicero’s De Oratore, 202-5), but many sentences in e.g. Livy do stretch on, covering several lines of a modern edition.
+            <div class="parallax-viewport">
 
-Short Latin sentences can often be read fluently and without much pause for thought. Long sentences, however, often require thorough and painstaking treatment. Breaking them down into their essential elements is wise, especially when you’re making your first attempts at dealing with them.
 
-Here below I offer 5 (now 8 – after an edit) small suggestions on how to tackle the task of translating longer prose sentences when you’re first starting out. The suggestions are intended chiefly for my students – but maybe others will also find them useful. I would be very happy for others to add further suggestions in the comments!
+                <ul class="parallax">
+                    <li class="layer"></li> 
+                    <li class="layer"></li> 
+                    <li class="layer"></li> 
+                </ul>
 
-    Use every clue the modern 
-</p>
+                <img id="ship"  src="./assets/backgrouond/ship.png"   class="ship">
+                <img id="beach" src="./assets/backgrouond/beach3.png" class="beach">
+
+                <div class="hero_wrapper">
+                    <div class="hero__content">
+                        <h1>Brasse</h1>
+                        <p>As pupils begin to develop their fluency in Latin reading and unseen translation, and begin to dig into the writing of some of the trickier Roman prose authors who form part of their Sixth Form syllabuses, they start to have to translate long sentences. Usually they find this difficult. No other Latin sentence is as lengthy as the 279 words of the longest sentence we have on record in Classical Latin (from Cicero's De Oratore, 202-5), but many sentences in e.g. Livy do stretch on, covering several lines of a modern edition.
+
+                        Short Latin sentences can often be read fluently and without much pause for thought. Long sentences, however, often require thorough and painstaking treatment. Breaking them down into their essential elements is wise, especially when you're making your first attempts at dealing with them.
+
+                        Here below I offer 5 (now 8 – after an edit) small suggestions on how to tackle the task of translating longer prose sentences when you're first starting out. The suggestions are intended chiefly for my students – but maybe others will also find them useful. I would be very happy for others to add further suggestions in the comments!
+
+                        Use every clue the modern
+                        </p>
+                    </div>
+                </div>
+
             </div>
-        </div>
-            
- 
-            
         </section>
     </main>
- 
+
     <div class="site-footer" id="site-footer"></div>
- 
+
     <script>
         fetch("footer.html")
             .then(r => r.text())
             .then(html => { document.getElementById("site-footer").innerHTML = html; })
             .catch(err => console.error("Failed to load footer:", err));
     </script>
- 
 
     <script>
         const layers = document.querySelectorAll('.layer');
 
         const config = [
-          { offset:  0,  speed: 0.1    }, // sky   — fixe, toujours visible
-          { offset:  10,  speed: 0.08 }, // mer   — visible dès le départ, bouge doucement
-          { offset: 20,  speed: 0.1 }, // ship  — apparaît après peu de scroll
-          { offset: 30,  speed: 0.05 }, // beach — nécessite ~2 écrans de scroll
-          { offset: 100,  speed: 0.2   }, // grass — premier plan, rapide
+            { offset:   0, speed: 0.1  }, // ciel
+            { offset:  10, speed: 0.08 }, // mer
+            { offset: 100, speed: 0.2  }, //sand
         ];
 
         function parallax() {
-          const y = window.scrollY;
-          const vh = window.innerHeight / 100;
-        
-          layers.forEach((layer, i) => {
-            const { offset, speed } = config[i];
-            // offset pousse vers le bas au départ
-            // speed * y remonte progressivement au scroll
-            const move = (offset * vh) - (speed * y);
-            layer.style.transform = `translateY(${move}px)`;
-          });
+            const y  = window.scrollY;
+            const vh = window.innerHeight / 100;
+            layers.forEach((layer, i) => {
+                const { offset, speed } = config[i];
+                layer.style.transform = `translateY(${(offset * vh) - (speed * y)}px)`;
+            });
         }
 
         window.addEventListener('scroll', parallax, true);
-        parallax(); // applique les positions initiales sans attendre le scroll
+        parallax();
+
+
+
+        function lerp(a, b, t) {
+            return a + (b - a) * t;
+        }
+
+        function getPointOnPath(path, t) {
+            const segments = path.length - 1;
+            const scaled   = t * segments;
+            const index    = Math.min(Math.floor(scaled), segments - 1);
+            const local_t  = scaled - index;
+            return {
+                x: lerp(path[index].x, path[index + 1].x, local_t),
+                y: lerp(path[index].y, path[index + 1].y, local_t),
+            };
+        }
+
+        function getScrollT() {
+            const hero      = document.querySelector('.hero');
+            const maxScroll = hero.offsetHeight - window.innerHeight;
+            return Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+        }
+
+        const ship = document.getElementById('ship');
+
+        const shipPath = [
+    { x:  85, y: 52 }, // au large à droite
+    { x:  70, y: 53 }, 
+    { x:  55, y: 55 }, 
+    { x:  40, y: 57 },
+    { x:  25, y: 59 }, 
+    { x:  10, y: 61 }, 
+    { x:  -5, y: 62 }, // sort hors écran à gauche
+];
+        const shipScale = [
+    0.4,  // au large — tout petit
+    0.55,
+    0.7,
+    0.85,
+    1.1,
+    1.4,  // près de la plage — grand
+    1.6,
+];
+
+        let lastScrollY = window.scrollY;
+
+        function updateShip() {
+    const hero      = document.querySelector('.hero');
+    const maxScroll = hero.offsetHeight - window.innerHeight;
+    const t         = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+    const pos       = getPointOnPath(shipPath, t);
+
+    // Taille interpolée le long du chemin
+    const segments  = shipScale.length - 1;
+    const scaled    = t * segments;
+    const idx       = Math.min(Math.floor(scaled), segments - 1);
+    const size      = lerp(shipScale[idx], shipScale[idx + 1], scaled - idx);
+
+    const scrollingDown = window.scrollY >= lastScrollY;
+    const flipX = scrollingDown ? 1 : -1;
+
+    ship.style.left      = pos.x + 'vw';
+    ship.style.top       = pos.y + 'vh';
+    // ✅ flip + scale combinés dans le même transform
+    ship.style.transform = `scaleX(${flipX * size}) scaleY(${size})`;
+
+    lastScrollY = window.scrollY;
+}
+
+        window.addEventListener('scroll', updateShip, false);
+        updateShip();
+
+        const beach = document.getElementById('beach'); 
+
+        const beachPath = [
+    { x: 0, y: 15 }, 
+    { x:   0, y: 5 },
+
+];  
+        function updateBeach() {
+            const t   = getScrollT();
+            const pos = getPointOnPath(beachPath, t);
+
+            beach.style.left = pos.x + 'vw';
+            beach.style.top  = pos.y + 'vh';
+        }
+
+        window.addEventListener('scroll', updateBeach, false);
+        updateBeach();
+
     </script>
+
 </body>
 </html>
