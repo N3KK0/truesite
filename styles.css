@@ -1,25 +1,41 @@
 :root {
-  --color-dark: #0f0505;
-  --color-dark-blue: #1E2A47;
-  --color-light-blue: #546a92;
-  --color-navy: #1f2937;
-  --color-dark-red: #8B0000;
-  --color-gold: #C1A260;
-  --color-red-gradient: #C54D4D;
-  --font-playfair: 'Playfair Display', serif;
+  --color-fond: #d0e4ff;
+  --color-noir: #0f0505;
+  --font-spaceGro: 'Space Grotesk', sans-serif;
 }
 
-/* === BASE STYLES === */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: var(--font-playfair);
-  background-color: var(--color-dark);
+  font-family: var(--font-spaceGro);
+  background-color: var(--color-fond);
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--color-fond);
+}
+
+
+
+
+
+
+/*footer*/
+.footer-content{
+    background-color: transparent;
+    border: 5px solid #000000;
+    padding: 8px;
+    text-align: center;
+    border-radius: 50px;
+    margin: 0 10px;
+}
