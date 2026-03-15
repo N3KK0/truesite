@@ -17,7 +17,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Parallax hero: mer + bateau + ciel */
 .hero {
   position: relative;
   height: 100vh;
@@ -47,7 +46,6 @@ body {
   color: #fff;
 }
 
-/* Section sable/plage qui défile */
 .content--sand {
   min-height: 100vh;
   padding: 4rem 1.5rem;
