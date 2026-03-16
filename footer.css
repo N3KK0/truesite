@@ -21,8 +21,7 @@ footer {
     padding: 10px 0;
 
     background: transparent;
-    pointer-events: none; 
-    z-index: 999;
+    z-index: 9998;
     height: clamp(50px, 15vh, 80px);
     font-size: clamp(0.75rem, 1.2vw, 1rem);
 }
@@ -74,7 +73,7 @@ footer img {
   position: absolute;
   inset: 0em;
   z-index: 100000;
-
+    pointer-events: none;
   border: 8px solid transparent;
   border-image: url('./assets/frame.png') 25 fill stretch;
 }
