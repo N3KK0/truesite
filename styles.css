@@ -15,12 +15,41 @@ html {
 }
 
 body {
-  font-family: var(--font-spaceGro);
+  font-family: var(--font-spaceGro);                    
   background-color: var(--color-fond);
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
  }
+
+
+.logo {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  gap: 0.02em;
+  text-decoration: none;
+}
+
+.logo span {
+  font-size: 9em;
+  display: inline-block;
+  transform-origin: center bottom;
+  transition: transform 0.1s ease-out;
+
+
+  background-image: url('./assets/textureTitre3.png');
+  background-size: cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(4px 6px 8px rgba(40,15,0,0.9));
+}
+
 
 
 .hero {
@@ -109,11 +138,11 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  padding: 80px 20px;
+  padding: 40px 70px;
   text-align: center;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 -4px 10px rgba(0,0,0,0.2);
   border: 1px solid rgba(255,255,255,0.26);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' seed='3' result='noise'/%3E%3CfeColorMatrix type='saturate' values='0' in='noise' result='gray'/%3E%3CfeBlend in='SourceGraphic' in2='gray' mode='multiply'/%3E%3C/filter%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23F5E6B8'/%3E%3Cstop offset='35%25' stop-color='%23EDD99A'/%3E%3Cstop offset='65%25' stop-color='%23F0DFA8'/%3E%3Cstop offset='100%25' stop-color='%23E8D090'/%3E%3C/linearGradient%3E%3CradialGradient id='b' cx='50%25' cy='50%25' r='70%25'%3E%3Cstop offset='60%25' stop-color='rgba(180%2C120%2C30%2C0)'/%3E%3Cstop offset='100%25' stop-color='rgba(100%2C55%2C10%2C0.45)'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23g)' filter='url(%23p)' opacity='0.55'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)'/%3E%3C/svg%3E");
+  background-image: url('assets/paper.jpg');
   vertical-align: top;
   background-size: cover;
   color: #2a1005;
@@ -133,14 +162,14 @@ body {
   animation: bouncy-out 0.35s ease forwards;
 }
 .hero__content::before {
-  content: '';
-  position: absolute;
-  height: 100.5%;
-  inset: 0px;
-  pointer-events: none;
-  z-index: -10;
-  background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect x='8' y='8' width='84' height='84' fill='none' stroke='rgba(200%2C155%2C40%2C0.35)' stroke-width='0.6'/%3E%3Crect x='11' y='11' width='78' height='78' fill='none' stroke='rgba(210%2C170%2C55%2C0.75)' stroke-width='1.2' stroke-dasharray='5 3'/%3E%3Crect x='15' y='15' width='70' height='70' fill='none' stroke='rgba(200%2C155%2C40%2C0.4)' stroke-width='0.5'/%3E%3Ccircle cx='0' cy='0' r='10' fill='rgba(160%2C110%2C15%2C0.9)' stroke='rgba(220%2C175%2C55%2C0.9)' stroke-width='1'/%3E%3Ccircle cx='0' cy='0' r='4' fill='none' stroke='rgba(240%2C200%2C80%2C0.7)' stroke-width='0.7'/%3E%3Cpath d='M0 -8L1.5 -2L0 0L-1.5 -2Z M0 8L1.5 2L0 0L-1.5 2Z M-8 0L-2 1.5L0 0L-2 -1.5Z M8 0L2 1.5L0 0L2 -1.5Z' fill='rgba(240%2C200%2C80%2C0.85)'/%3E%3Ccircle cx='100' cy='0' r='10' fill='rgba(160%2C110%2C15%2C0.9)' stroke='rgba(220%2C175%2C55%2C0.9)' stroke-width='1'/%3E%3Ccircle cx='100' cy='0' r='4' fill='none' stroke='rgba(240%2C200%2C80%2C0.7)' stroke-width='0.7'/%3E%3Cpath d='M100 -8L101.5 -2L100 0L98.5 -2Z M100 8L101.5 2L100 0L98.5 2Z M92 0L98 1.5L100 0L98 -1.5Z M108 0L102 1.5L100 0L102 -1.5Z' fill='rgba(240%2C200%2C80%2C0.85)'/%3E%3Ccircle cx='0' cy='100' r='10' fill='rgba(160%2C110%2C15%2C0.9)' stroke='rgba(220%2C175%2C55%2C0.9)' stroke-width='1'/%3E%3Ccircle cx='0' cy='100' r='4' fill='none' stroke='rgba(240%2C200%2C80%2C0.7)' stroke-width='0.7'/%3E%3Cpath d='M0 92L1.5 98L0 100L-1.5 98Z M0 108L1.5 102L0 100L-1.5 102Z M-8 100L-2 101.5L0 100L-2 98.5Z M8 100L2 101.5L0 100L2 98.5Z' fill='rgba(240%2C200%2C80%2C0.85)'/%3E%3Ccircle cx='100' cy='100' r='10' fill='rgba(160%2C110%2C15%2C0.9)' stroke='rgba(220%2C175%2C55%2C0.9)' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='4' fill='none' stroke='rgba(240%2C200%2C80%2C0.7)' stroke-width='0.7'/%3E%3Cpath d='M100 92L101.5 98L100 100L98.5 98Z M100 108L101.5 102L100 100L98.5 102Z M92 100L98 101.5L100 100L98 98.5Z M108 100L102 101.5L100 100L102 98.5Z' fill='rgba(240%2C200%2C80%2C0.85)'/%3E%3C/svg%3E");
+    content: '';
+    position: absolute;
+    inset: 0em;
+    pointer-events: none;
+    z-index: 100000;
+
+    border: 25px solid transparent;
+    border-image: url('./assets/frame.png') 25 fill stretch;
 }
 .hero__content p {
   background: transparent;
@@ -151,15 +180,8 @@ body {
   text-align: center  ;
   border-radius: 0;
 }
-.hero__content::before {
-  content: '';
-  position: absolute;
-  inset: 0px;
-  pointer-events: none;
-  z-index: -1;
-  background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='wh' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%238B5E2A'/%3E%3Cstop offset='20%25' stop-color='%23A0722A'/%3E%3Cstop offset='40%25' stop-color='%237A4E1E'/%3E%3Cstop offset='60%25' stop-color='%239C6828'/%3E%3Cstop offset='80%25' stop-color='%23A07030'/%3E%3Cstop offset='100%25' stop-color='%238B5E2A'/%3E%3C/linearGradient%3E%3ClinearGradient id='wv' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%238B5E2A'/%3E%3Cstop offset='20%25' stop-color='%23A0722A'/%3E%3Cstop offset='40%25' stop-color='%237A4E1E'/%3E%3Cstop offset='60%25' stop-color='%239C6828'/%3E%3Cstop offset='80%25' stop-color='%23A07030'/%3E%3Cstop offset='100%25' stop-color='%238B5E2A'/%3E%3C/linearGradient%3E%3ClinearGradient id='st' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='rgba(0%2C0%2C0%2C0.5)'/%3E%3Cstop offset='100%25' stop-color='rgba(0%2C0%2C0%2C0)'/%3E%3C/linearGradient%3E%3ClinearGradient id='sb' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='rgba(0%2C0%2C0%2C0)'/%3E%3Cstop offset='100%25' stop-color='rgba(0%2C0%2C0%2C0.5)'/%3E%3C/linearGradient%3E%3ClinearGradient id='sl' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='rgba(0%2C0%2C0%2C0.5)'/%3E%3Cstop offset='100%25' stop-color='rgba(0%2C0%2C0%2C0)'/%3E%3C/linearGradient%3E%3ClinearGradient id='sr' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='rgba(0%2C0%2C0%2C0)'/%3E%3Cstop offset='100%25' stop-color='rgba(0%2C0%2C0%2C0.5)'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' width='100' height='6' fill='url(%23wh)'/%3E%3Cline x1='0' y1='2' x2='100' y2='2' stroke='rgba(60%2C30%2C5%2C0.3)' stroke-width='0.4'/%3E%3Cline x1='0' y1='4' x2='100' y2='4' stroke='rgba(180%2C120%2C40%2C0.2)' stroke-width='0.3'/%3E%3Crect x='0' y='0' width='100' height='6' fill='url(%23st)' opacity='0.6'/%3E%3Crect x='0' y='0' width='100' height='2' fill='rgba(255%2C255%2C255%2C0.12)'/%3E%3Crect x='0' y='94' width='100' height='6' fill='url(%23wh)'/%3E%3Cline x1='0' y1='96' x2='100' y2='96' stroke='rgba(60%2C30%2C5%2C0.3)' stroke-width='0.4'/%3E%3Cline x1='0' y1='98' x2='100' y2='98' stroke='rgba(180%2C120%2C40%2C0.2)' stroke-width='0.3'/%3E%3Crect x='0' y='94' width='100' height='6' fill='url(%23sb)' opacity='0.6'/%3E%3Crect x='0' y='6' width='6' height='88' fill='url(%23wv)'/%3E%3Cline x1='2' y1='6' x2='2' y2='94' stroke='rgba(60%2C30%2C5%2C0.3)' stroke-width='0.4'/%3E%3Cline x1='4' y1='6' x2='4' y2='94' stroke='rgba(180%2C120%2C40%2C0.2)' stroke-width='0.3'/%3E%3Crect x='0' y='6' width='6' height='88' fill='url(%23sl)' opacity='0.6'/%3E%3Crect x='0' y='6' width='2' height='88' fill='rgba(255%2C255%2C255%2C0.12)'/%3E%3Crect x='94' y='6' width='6' height='88' fill='url(%23wv)'/%3E%3Cline x1='96' y1='6' x2='96' y2='94' stroke='rgba(60%2C30%2C5%2C0.3)' stroke-width='0.4'/%3E%3Cline x1='98' y1='6' x2='98' y2='94' stroke='rgba(180%2C120%2C40%2C0.2)' stroke-width='0.3'/%3E%3Crect x='94' y='6' width='6' height='88' fill='url(%23sr)' opacity='0.6'/%3E%3Crect x='0' y='0' width='6' height='6' fill='%235C3A10'/%3E%3Crect x='94' y='0' width='6' height='6' fill='%235C3A10'/%3E%3Crect x='0' y='94' width='6' height='6' fill='%235C3A10'/%3E%3Crect x='94' y='94' width='6' height='6' fill='%235C3A10'/%3E%3Crect x='0' y='0' width='100' height='100' fill='none' stroke='rgba(40%2C20%2C5%2C0.7)' stroke-width='0.8'/%3E%3Crect x='6' y='6' width='88' height='88' fill='none' stroke='rgba(40%2C20%2C5%2C0.4)' stroke-width='0.5'/%3E%3C/svg%3E");
-}
+
+
 
 
 
@@ -169,10 +191,14 @@ body {
 }
 
 
-.hero__frame {
-  position: relative;
-  z-index: 10;
+.hero__wrapper {
+  position: absolute;  /* sort du flux flex */
+  top: 20vh;           /* ajuste cette valeur */
+  left: 40vh;;
+  transform: translateX(-50%); /* centre horizontalement */
+  z-index: 100;
   max-width: 700px;
+  width: 40%;
 }
 
 @keyframes bouncy-in {
@@ -192,16 +218,20 @@ body {
 
 .beach{
   position: absolute;
-  width: 100vw;
+  width: 100vw;                         
   pointer-events: none;
   z-index: 12;
   transform-origin: center bottom;
 }
-
+.seagull,
 .ship {
-  position: absolute;
+  position: absolute;     
   width: 15vw;
   pointer-events: none;
   z-index: 3;
   transform-origin: center center;
+  pointer-events: auto                                                                          ;
+}
+.seagull{
+  z-index: 14;
 }

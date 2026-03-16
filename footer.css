@@ -2,8 +2,6 @@ body {
     /* Ce min-height vient de footer.css (chargé après styles.css),
        donc il écrase toute valeur définie ailleurs */
     min-height: fit-content; /* augmente la hauteur minimale pour plus de scroll */
-    display: flex;
-    flex-direction: column;
     background-color: var(--color-fond);
 }
 
@@ -23,9 +21,9 @@ footer {
     padding: 10px 0;
 
     background: transparent;
-    pointer-events: none;
+    pointer-events: none; 
     z-index: 999;
-    height: clamp(50px, 10vh, 80px);
+    height: clamp(50px, 15vh, 80px);
     font-size: clamp(0.75rem, 1.2vw, 1rem);
 }
 .site-footer {
@@ -35,21 +33,19 @@ footer {
 }
 
 .footer-pill {
-    pointer-events: auto;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 -4px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.2px);
-    -webkit-backdrop-filter: blur(3.2px);
-    border: 1px solid rgba(255, 255, 255, 0.26);
-    
-    padding: 1px 2px;
-
+  position: relative;
+  height: max-content;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 10px 10px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 -4px 10px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.26);
+  background-image: url('assets/paper.jpg');
+  vertical-align: top;
+  background-size: cover;
+  color: #2a1005;
+  bottom: 1.5vh;
 }
 
 
@@ -61,14 +57,24 @@ footer a {
 }
 
 footer img {
-    width: 38px;
-    height: 38px;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
-    
+    top: 40%;
+    vertical-align: middle;
 }
 
-.logo:hover,
+.footerLogo:hover,
 .insta:hover {
     transform: scale(1.08);
     transition: transform 0.18s ease;
+}
+.footer-pill::before{
+    content: '';
+  position: absolute;
+  inset: 0em;
+  z-index: 100000;
+
+  border: 8px solid transparent;
+  border-image: url('./assets/frame.png') 25 fill stretch;
 }

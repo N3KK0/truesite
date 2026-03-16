@@ -12,7 +12,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="logo">Pirat'eirb</a>
+        
         <ul>
             <li><a href="videos.html">Vidéos</a></li>
             <li><a href="equipage.html">Équipage</a></li>
@@ -22,7 +22,21 @@
         </ul>
     </nav>
 
+    <a href="index.html" class="logo">
+        <span>P</span>
+        <span>I</span>
+        <span>R</span>
+        <span>A</span>
+        <span>T</span>
+        <span>'</span>
+        <span>E</span>
+        <span>I</span>
+        <span>R</span>
+        <span>B</span>
+    </a>
+
     <main>
+        
         <section class="hero">
             <div class="parallax-viewport">
 
@@ -32,11 +46,11 @@
                     <li class="layer"></li> 
                     <li class="layer"></li> 
                 </ul>
-
+                <img id="seagull" src="./assets/backgrouond/seagull1.svg" class="seagull">
                 <img id="ship"  src="./assets/backgrouond/ship.png"   class="ship">
                 <img id="beach" src="./assets/backgrouond/beach3.png" class="beach">
 
-                <div class="hero_wrapper">
+                <div class="hero__wrapper">
                     <div class="hero__content">
                         <h1>Brasse</h1>
                         <p>As pupils begin to develop their fluency in Latin reading and unseen translation, and begin to dig into the writing of some of the trickier Roman prose authors who form part of their Sixth Form syllabuses, they start to have to translate long sentences. Usually they find this difficult. No other Latin sentence is as lengthy as the 279 words of the longest sentence we have on record in Classical Latin (from Cicero's De Oratore, 202-5), but many sentences in e.g. Livy do stretch on, covering several lines of a modern edition.
@@ -62,119 +76,67 @@
             .then(html => { document.getElementById("site-footer").innerHTML = html; })
             .catch(err => console.error("Failed to load footer:", err));
     </script>
+            <script src="animate.js"></script>
+<script src="animate.js"></script>
+<script>
 
-    <script>
-        const layers = document.querySelectorAll('.layer');
-
-        const config = [
-            { offset:   0, speed: 0.1  }, // ciel
-            { offset:  10, speed: 0.08 }, // mer
-            { offset: 100, speed: 0.2  }, //sand
-        ];
-
-        function parallax() {
-            const y  = window.scrollY;
-            const vh = window.innerHeight / 100;
-            layers.forEach((layer, i) => {
-                const { offset, speed } = config[i];
-                layer.style.transform = `translateY(${(offset * vh) - (speed * y)}px)`;
-            });
-        }
-
-        window.addEventListener('scroll', parallax, true);
-        parallax();
-
-
-
-        function lerp(a, b, t) {
-            return a + (b - a) * t;
-        }
-
-        function getPointOnPath(path, t) {
-            const segments = path.length - 1;
-            const scaled   = t * segments;
-            const index    = Math.min(Math.floor(scaled), segments - 1);
-            const local_t  = scaled - index;
-            return {
-                x: lerp(path[index].x, path[index + 1].x, local_t),
-                y: lerp(path[index].y, path[index + 1].y, local_t),
-            };
-        }
-
-        function getScrollT() {
-            const hero      = document.querySelector('.hero');
-            const maxScroll = hero.offsetHeight - window.innerHeight;
-            return Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
-        }
-
-        const ship = document.getElementById('ship');
-
-        const shipPath = [
-    { x:  85, y: 52 }, // au large à droite
-    { x:  70, y: 53 }, 
-    { x:  55, y: 55 }, 
-    { x:  40, y: 57 },
-    { x:  25, y: 59 }, 
-    { x:  10, y: 61 }, 
-    { x:  -5, y: 62 }, // sort hors écran à gauche
+// ── Parallax calques ──────────────────────────────────────────────────────
+const layers = document.querySelectorAll('.layer');
+const layerConfig = [
+  { offset:   0, speed: 0.1  },
+  { offset:  10, speed: 0.08 },
+  { offset: 100, speed: 0.2  },
 ];
-        const shipScale = [
-    0.4,  // au large — tout petit
-    0.55,
-    0.7,
-    0.85,
-    1.1,
-    1.4,  // près de la plage — grand
-    1.6,
+window.addEventListener('scroll', () => {
+  const y = window.scrollY, vh = window.innerHeight / 100;
+  layers.forEach((layer, i) => {
+    const { offset, speed } = layerConfig[i];
+    layer.style.transform = `translateY(${offset * vh - speed * y}px)`;
+  });
+}, { passive: true });
+
+
+// ── Données ───────────────────────────────────────────────────────────────
+const shipPath = [
+  { x: 85, y: 52 }, { x: 70, y: 53 }, { x: 55, y: 55 },
+  { x: 40, y: 57 }, { x: 25, y: 59 }, { x: 10, y: 61 }, { x: -5, y: 62 },
 ];
+const shipScaleArr = [0.4, 0.55, 0.7, 0.85, 1.1, 1.4, 1.6];
 
-        let lastScrollY = window.scrollY;
+const seagullPath = [
+  { x:  15, y: 32 }, { x: 22, y: 28 }, { x: 30, y: 33 },
+  { x:  38, y: 29 }, { x: 46, y: 35 }, { x: 53, y: 31 },
+  { x:  61, y: 38 }, { x: 68, y: 34 }, { x: 75, y: 42 },
+  { x:  83, y: 38 }, { x: 92, y: 45 }, { x: 105, y: 48 },
+];
+const seagullScaleArr = shipScaleArr.map(s => s * 0.4);
 
-        function updateShip() {
-    const hero      = document.querySelector('.hero');
-    const maxScroll = hero.offsetHeight - window.innerHeight;
-    const t         = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
-    const pos       = getPointOnPath(shipPath, t);
 
-    // Taille interpolée le long du chemin
-    const segments  = shipScale.length - 1;
-    const scaled    = t * segments;
-    const idx       = Math.min(Math.floor(scaled), segments - 1);
-    const size      = lerp(shipScale[idx], shipScale[idx + 1], scaled - idx);
+// ── Bateau & Mouette — animatePath (left/top + flip) ─────────────────────
+animatePath('ship',    shipPath,    shipScaleArr,    { flipDown:  1, flipUp: -1 });
+animatePath('seagull', seagullPath, seagullScaleArr, { flipDown: -1, flipUp:  1 });
 
-    const scrollingDown = window.scrollY >= lastScrollY;
-    const flipX = scrollingDown ? 1 : -1;
 
-    ship.style.left      = pos.x + 'vw';
-    ship.style.top       = pos.y + 'vh';
-    // ✅ flip + scale combinés dans le même transform
-    ship.style.transform = `scaleX(${flipX * size}) scaleY(${size})`;
+// ── Beach — animatePath sans flip (même système left/top que le original) ─
+//    scales = [1,1] : pas de zoom, juste le déplacement
+animatePath('beach', [
+  { x: 0, y: 15 },
+  { x: 0, y:  5 },
+], [1, 1], { flipDown: 1, flipUp: 1 });
 
-    lastScrollY = window.scrollY;
+
+// ── Hero wrapper — style.top direct pour ne pas écraser translateX(-50%) ──
+const heroWrapper = document.querySelector('.hero__wrapper');
+function updateHero() {
+  const hero = document.querySelector('.hero');
+  const max  = hero.offsetHeight - window.innerHeight;
+  const t    = Math.min(Math.max(window.scrollY / max, 0), 1);
+  heroWrapper.style.top = `${lerp(-100, 25, t)}vh`;
 }
+window.addEventListener('scroll', updateHero, { passive: true });
+updateHero();
 
-        window.addEventListener('scroll', updateShip, false);
-        updateShip();
-
-        const beach = document.getElementById('beach'); 
-
-        const beachPath = [
-    { x: 0, y: 15 }, 
-    { x:   0, y: 5 },
-
-];  
-        function updateBeach() {
-            const t   = getScrollT();
-            const pos = getPointOnPath(beachPath, t);
-
-            beach.style.left = pos.x + 'vw';
-            beach.style.top  = pos.y + 'vh';
-        }
-
-        window.addEventListener('scroll', updateBeach, false);
-        updateBeach();
-
-    </script>
+</script>
 
 </body>
 </html>
