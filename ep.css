@@ -1,0 +1,180 @@
+/* ── EP grid section ── */
+#container__grille {
+    width: 100%;
+    max-width: 1300px;
+    margin: 2rem auto 4rem;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* ── Card base ── */
+.ep-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* toujours carré */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+    cursor: pointer;
+}
+
+/* ── face commune ── */
+.ep-card .face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ── face1 : overlay d'infos (derrière par défaut) ── */
+.ep-card .face1 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    gap: 10px;
+    z-index: 1;
+}
+
+.ep-card .face1 .track-title {
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.ep-card .face1 .track-mcs {
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+    font-weight: 400;
+}
+
+.ep-card .face1 .track-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.ep-card .face1 .track-links a {
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: 0.72rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.ep-card .face1 .track-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── face2 : la cover (devant par défaut) ── */
+.ep-card .face2 {
+    z-index: 2;
+    bottom: 0;
+    top: auto;
+    height: 100%;
+    transition: height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 0.45s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ep-card .face2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Petite bande réfléchissante sur la face2 */
+.ep-card .face2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+    z-index: 3;
+    border-radius: 12px 0 0 12px;
+}
+
+/* ── Hover : face2 slide vers le bas ── */
+.ep-card:hover .face2 {
+    height: 56px;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Accent couleur en bas selon la carte */
+.ep-card:nth-child(1) .face2 {
+    background: #0a0a0a;
+}
+
+.ep-card:nth-child(2) .face2 {
+    background: #0a0a0a;
+}
+
+.ep-card:nth-child(3) .face2 {
+    background: #0a0a0a;
+}
+
+.ep-card:nth-child(4) .face2 {
+    background: #0a0a0a;
+}
+
+/* Trait coloré en bas de la bande */
+.ep-card:nth-child(1) .face2::after {
+    --accent: #f7308c;
+}
+
+.ep-card:nth-child(2) .face2::after {
+    --accent: #09afff;
+}
+
+.ep-card:nth-child(3) .face2::after {
+    --accent: #ffeb3b;
+}
+
+.ep-card:nth-child(4) .face2::after {
+    --accent: #7cff6b;
+}
+
+.ep-card .face2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent, #fff);
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.3s 0.2s;
+}
+
+.ep-card:hover .face2::after {
+    opacity: 1;
+}
+
+/* ── Titre de la page ── */
+#container__title {
+    text-align: center;
+    padding: 3rem 1rem 1rem;
+}
