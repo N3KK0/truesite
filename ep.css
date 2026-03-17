@@ -1,11 +1,15 @@
-
-
 /* ══════════════════════════════════════════
    FOND
 ══════════════════════════════════════════ */
 body {
     background-color: #282828;
     overflow-x: hidden;
+    /* disable scroll bar */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+
 }
 
 #bg-grid {
@@ -159,6 +163,7 @@ main {
         opacity: 0;
         transform: rotate(90deg) translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: rotate(90deg) translateY(0);
@@ -447,7 +452,6 @@ main {
 
 @media (max-width: 768px) {
 
-    /* ===== LAYOUT GLOBAL ===== */
     main {
         flex-direction: column;
         align-items: center;
@@ -457,7 +461,7 @@ main {
 
     /* ===== TITRE ===== */
     #container__title {
-        position: relative; /* ← on sort du fixed */
+        position: relative;
         top: auto;
         left: auto;
         margin: 1rem 0;
@@ -470,19 +474,20 @@ main {
         font-size: clamp(2.2rem, 8vw, 3.5rem);
         margin: 0;
     }
+
     #container__title h1 .letter {
         display: inline-block;
         transform: rotate(90deg);
         transform-origin: center;
     }
 
-    /* ===== GRILLE → 1 COLONNE ===== */
     #container__grille {
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;
-        max-width: 500px; /* ← limite pour beau rendu */
-        
+        max-width: 800px;
+        min-width: 80%;
+
         margin: 0;
         padding: 0 1rem;
         gap: 20px;
@@ -491,11 +496,10 @@ main {
     /* ===== CARDS ===== */
     .ep-card {
         width: 100%;
-        aspect-ratio: 1 / 1; /* belles covers carrées */
+        aspect-ratio: 1 / 1;
         border-radius: 14px;
     }
 
-    /* on reset tout le masonry desktop */
     .ep-card:nth-child(1),
     .ep-card:nth-child(2),
     .ep-card:nth-child(3) {
@@ -525,17 +529,17 @@ main {
 
     /* ===== FIX HOVER MOBILE ===== */
     .ep-card .face2 {
-    height: 100%; /* repart de l'état initial correct */
-}
+        height: 100%;
+    }
 
-.ep-card.tapped .face2 {
-    height: 56px;
-    border-radius: 0 0 14px 14px;
-}
+    .ep-card.tapped .face2 {
+        height: 56px;
+        border-radius: 0 0 14px 14px;
+    }
 
-.ep-card.tapped .face2::after {
-    opacity: 1;
-}
+    .ep-card.tapped .face2::after {
+        opacity: 1;
+    }
 
     /* ===== NAV ===== */
     #navbar {

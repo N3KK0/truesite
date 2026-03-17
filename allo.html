@@ -9,37 +9,89 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="allo.css">
 
-    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
     <nav>
         <ul>
             <li id="back"><a href="index.html"><img src="assets/back.png" alt="Retour"></a></li>
-            <li><a href="equipage.html">Équipage</a></li>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="partenaires.html">Partenariats</a></li>
-            <li><a href="allo.html">Allo</a></li>
         </ul>
     </nav>
 
-    
+    <a href="index.html" class="title">
+        <span class="letter">A</span>
+        <span class="letter">L</span>
+        <span class="letter">L</span>
+        <span class="letter">O</span>
+    </a>
+
     <main>
-<h1>Allo</h1>    </main>
 
+    <div class="wrapper">
+        <div class="container">
+            <input type="radio" name="slide" id="c1" checked>
+            <label for="c1" class="card">
+                <div class="menu-grid">
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                </div>
+                <div class="row">
+                    <div class="icon">TAL</div>
+                    <div class="description">
+                        <h4>QG - Talence</h4>
+                        <p class="tel">Tel : 06.XX.XX.XX.XX</p>
+                    </div>
+                </div>
+            </label>
+            <input type="radio" name="slide" id="c2" >
+            <label for="c2" class="card">
+                <div class="menu-grid">
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+ 
+                </div>
 
-        <div id="site-footer"></div>
-    <script>
-        fetch("footer.html")
-          .then(r => r.text())
-          .then(html => { document.getElementById("site-footer").innerHTML = html; })
-          .catch(err => console.error("Failed to load footer:", err));
-    </script>
+                <div class="row">
+                    <div class="icon">BDX</div>
+                    <div class="description">
+                        <h4>QG - Bordeaux</h4>
+                        <p class="tel">Tel : 06.XX.XX.XX.XX</p>
+                    </div>
+                </div>
+            </label>
+            <input type="radio" name="slide" id="c3" >
+            <label for="c3" class="card">
+                <div class="menu-grid">
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                    <div class="menu-item"><span class="menu-name">Beurre sucre</span><span class="menu-price">2.50 €</span></div>
+                </div>
 
-
+                <div class="row">
+                    <div class="icon">PES</div>
+                    <div class="description">
+                        <h4>QG - Pessac</h4>
+                        <p class="tel">Tel : 06.XX.XX.XX.XX</p>
+                    </div>
+                </div>
+            </label>
+       </div>
+    </div>
+    
+    </main>
 </body>
 
 </html>

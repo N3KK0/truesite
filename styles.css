@@ -7,33 +7,13 @@
 html {
     scroll-behavior: smooth;
 }
-@media (max-width: 1024px) {
-    /* tablette */
-}
 
-@media (max-width: 768px) {
-    .hero__wrapper {
-        flex-direction: column;
-        width: 90%;
-        top: 15vh;
-    }
-    #allo {
-        margin-left : -5em;
-        top: 0.8em;
-        margin-top: 3em;
-        transform: scale(0.6);
-    }
-    .seagull, .ship {
-        width: 50vw;
-    }
-    .hero__content {
-        font-size: 0.8em;
-    }
-}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
@@ -43,6 +23,11 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    /* disable scroll bar */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 #allo {
@@ -362,4 +347,144 @@ body {
 
 .seagull {
     z-index: 14;
+}
+
+
+/* Tronque le texte dans la card */
+.bio-preview {
+    display: -webkit-box;
+    -webkit-line-clamp: 15;
+    /* nombre de lignes visibles */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#bio-card {
+    cursor: pointer;
+}
+
+/* Modal */
+#bio-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+}
+
+#bio-modal.show {
+    display: flex;
+}
+
+.bio-modal-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.bio-modal-box {
+    position: relative;
+    z-index: 1;
+    width: 70%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background-image: url('assets/paper.jpg');
+    background-size: cover;
+    padding: 40px 70px;
+    color: #2a1005;
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Même cadre que hero__content */
+.bio-modal-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100000;
+
+}
+
+#bio-modal.show .bio-modal-bg {
+    opacity: 1;
+}
+
+#bio-modal.show .bio-modal-box {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+@media (max-width: 768px) {
+    .hero__wrapper {
+        flex-direction: column;
+        width: 90%;
+        top: 15vh;
+    }
+
+    #allo {
+        margin-left: -5em;
+        top: 0.8em;
+        margin-top: 3em;
+        transform: scale(0.6);
+    }
+
+    .seagull,
+    .ship {
+        width: 50vw;
+    }
+
+    .hero__content {
+        font-size: 0.8em;
+    }
+
+    .hero__nav::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 100000;
+        border: 10px solid transparent;
+        border-image: url('./assets/frame.png') 25 fill stretch;
+    }
+
+    .hero__content::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 100000;
+        border: 10px solid transparent;
+        border-image: url('./assets/frame.png') 25 fill stretch;
+    }
+
+    .bio-modal-box {
+        font-size: 0.8em;
+        position: relative;
+        z-index: 1;
+        width: 80%;
+        max-width: 800px;
+        max-height: 90vh;
+        overflow-y: auto;
+        background-image: url('assets/paper.jpg');
+        background-size: cover;
+        text-align: center;
+        padding: 5px 10px;
+        color: #2a1005;
+        opacity: 0;
+        border-radius: 10px;
+        transform: scale(0.92);
+        transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
 }
