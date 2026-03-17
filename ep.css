@@ -1,8 +1,11 @@
+
+
 /* ══════════════════════════════════════════
    FOND
 ══════════════════════════════════════════ */
 body {
     background-color: #282828;
+    overflow-x: hidden;
 }
 
 #bg-grid {
@@ -154,12 +157,11 @@ main {
 @keyframes letterReveal {
     from {
         opacity: 0;
-        transform: translateX(20px);
+        transform: rotate(90deg) translateY(10px);
     }
-
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: rotate(90deg) translateY(0);
     }
 }
 
@@ -190,6 +192,7 @@ main {
     grid-template-rows: auto;
     gap: 24px;
     align-items: center;
+    margin-bottom: 1em;
 }
 
 .ep-card {
@@ -440,4 +443,126 @@ main {
 
 #dont-press:active {
     transform: scale(0.93);
+}
+
+@media (max-width: 768px) {
+
+    /* ===== LAYOUT GLOBAL ===== */
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        gap: 20px;
+    }
+
+    /* ===== TITRE ===== */
+    #container__title {
+        position: relative; /* ← on sort du fixed */
+        top: auto;
+        left: auto;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    #container__title h1 {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+        margin: 0;
+    }
+    #container__title h1 .letter {
+        display: inline-block;
+        transform: rotate(90deg);
+        transform-origin: center;
+    }
+
+    /* ===== GRILLE → 1 COLONNE ===== */
+    #container__grille {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 500px; /* ← limite pour beau rendu */
+        
+        margin: 0;
+        padding: 0 1rem;
+        gap: 20px;
+    }
+
+    /* ===== CARDS ===== */
+    .ep-card {
+        width: 100%;
+        aspect-ratio: 1 / 1; /* belles covers carrées */
+        border-radius: 14px;
+    }
+
+    /* on reset tout le masonry desktop */
+    .ep-card:nth-child(1),
+    .ep-card:nth-child(2),
+    .ep-card:nth-child(3) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    /* ===== FACE TEXTE ===== */
+    .ep-card .face1 {
+        padding: 16px;
+        gap: 8px;
+    }
+
+    .track-title {
+        font-size: 1.05rem;
+        line-height: 1.2;
+    }
+
+    .track-mcs {
+        font-size: 0.75rem;
+    }
+
+    .track-links a {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+
+    /* ===== FIX HOVER MOBILE ===== */
+    .ep-card .face2 {
+    height: 100%; /* repart de l'état initial correct */
+}
+
+.ep-card.tapped .face2 {
+    height: 56px;
+    border-radius: 0 0 14px 14px;
+}
+
+.ep-card.tapped .face2::after {
+    opacity: 1;
+}
+
+    /* ===== NAV ===== */
+    #navbar {
+        left: 1em;
+        right: 1em;
+    }
+
+    #back {
+        margin-left: -1.5em;
+    }
+
+    #allo {
+        right: 1em;
+        top: 1em;
+        transform: scale(0.75);
+    }
+
+    /* ===== BOUTON ===== */
+    #dont-press {
+        width: 80px;
+        height: 80px;
+        bottom: 1em;
+        left: 1em;
+    }
+
+    /* ===== PERF ===== */
+    #bg-grid {
+        opacity: 0.3;
+    }
 }

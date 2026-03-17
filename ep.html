@@ -6,7 +6,7 @@
     <title>EP 4-TITRES | PIRAT'EIRB</title>
     <link rel="icon" type="image/png" href="assets/logo.png">
 
-    <link rel="stylesheet" href="styles.css">
+
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="ep.css">
 </head>
@@ -171,6 +171,14 @@
         }
         resize();
         draw();
+
+        if (window.matchMedia('(max-width: 768px)').matches) {
+    document.querySelectorAll('.ep-card').forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('tapped');
+        });
+    });
+}
     </script>
 </body>
 </html>
