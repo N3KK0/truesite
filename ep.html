@@ -17,7 +17,6 @@
             <li id="allo">
                 <a href="allo.html">
                     ALLO
-                
                     <img src="assets/phone.png" id="phone">
                 </a>
             </li>
@@ -79,14 +78,12 @@
     <canvas id="bg-grid"></canvas>
 
     <script>
-        /* ── Découpe le titre en spans animés ── */
         const titleEl = document.querySelector('#container__title h1');
         const originalText = titleEl.textContent;
         titleEl.innerHTML = originalText.split('').map((ch, i) =>
             `<span class="letter" style="animation-delay:${0.1 + i * 0.12}s">${ch === ' ' ? '&nbsp;' : ch}</span>`
         ).join('');
 
-        /* ── Canvas grille ── */
         const canvas = document.getElementById('bg-grid');
         const ctx = canvas.getContext('2d');
         const SPACING = 55;
@@ -99,7 +96,6 @@
             mouse.x = e.clientX;
             mouse.y = e.clientY;
 
-            /* Réaction du titre à la souris — axes inversés car rotate(180deg) */
             if (titleEl) {
                 const rect = titleEl.getBoundingClientRect();
                 const cx = rect.left + rect.width / 2;
@@ -171,10 +167,8 @@
                     ctx.fill();
                 }
             });
-
             requestAnimationFrame(draw);
         }
-
         resize();
         draw();
     </script>
