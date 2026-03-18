@@ -6,6 +6,9 @@ const data = [
   {img: `assets/members/YoannM_bis.jpg`, name: 'Fried', price: '25', distance: '11'},
   {img: `assets/members/Pierre_bis.jpg`, name: 'Deep Fried', price: '23', distance: '6'},
   {img: `assets/members/YoannM_bis.jpg`, name: 'Fried', price: '25', distance: '11'},
+  {img: `assets/members/YoannE_bis.jpg`, name: 'Deep Fried', price: '23', distance: '6'},
+  {img: `assets/members/Aicha_bis.jpg`, name: 'Deep Fried', price: '23', distance: '6'},
+  {img: `assets/members/Egshi_bis.jpg`, name: 'Deep Fried', price: '23', distance: '6'},
 ]
 const frame = document.body.querySelector('.frame')
 data.forEach(_data => appendCard(_data))
