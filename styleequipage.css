@@ -1,9 +1,3 @@
-/* Base styling */
-* {
-    box-sizing: border-box;
-}
-
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap');
 
 html, body {
@@ -17,121 +11,6 @@ html, body {
   font-family: 'Nunito', sans-serif;
   background-color: #edeef3;
 }
-
-body {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background: linear-gradient(0deg, rgb(255, 96, 54), rgb(253, 38, 122)) no-repeat;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 50px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-}
-
-/* --- Flip Card mechanism (Pure CSS) --- */
-
-.deck {
-    width: 270px;
-    height: 380px;
-    perspective: 1000px;
-    /* Gives the 3D depth effect */
-    background-color: transparent;
-}
-
-.card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transform-style: preserve-3d;
-    cursor: pointer;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* Flip the card on click */
-.card.flipped {
-    transform: rotateY(180deg);
-}
-
-.face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    /* Safari */
-    backface-visibility: hidden;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-/* --- Front styling --- */
-.front {
-    background-color: #1a0b2e;
-    /* Dark purple base */
-    border: 2px solid #b829ff;
-    /* Neon border */
-    box-shadow: inset 0 0 15px rgba(184, 41, 255, 0.3);
-}
-
-.front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: drop-shadow(0 0 10px rgba(184, 41, 255, 0.4));
-}
-
-/* --- Back styling --- */
-.back {
-    background-color: #2b0057;
-    /* Deep neon purple for the back */
-    transform: rotateY(180deg);
-    border: 2px solid #e029ff;
-    /* Brighter neon border */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.back img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 1;
-    /* Dim the back image to read text */
-}
-
-/* Optional text styling for the back */
-.back h2 {
-    color: #f0a0ff;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px #e029ff;
-    margin-bottom: 10px;
-    z-index: 1;
-}
-
-.back p {
-    color: whitesmoke;
-    font-size: 0.9em;
-    z-index: 1;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-
 
 .frame {
   position: relative;
@@ -203,7 +82,7 @@ body {
 }
 
 .card .like::after {
-  content: "YUMM";
+  content: "COHéSION";
   color: #4dca93;
   border: 0.1em solid #4dca93;
 }
@@ -258,4 +137,13 @@ body {
   .frame {
     font-size: 8px;
   }
+}
+
+.panel {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: flex;
 }
