@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
@@ -9,11 +8,19 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Zen+Dots&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="stylepart.css">
     <link rel="stylesheet" href="footer.css">
+    <script src="part.js"></script>
 </head>
 
 <body>
+
+    <div class="main"></div>
+
     <main>
         <a href="index.html" class="logo">
             <span class="letter">P</span>
@@ -27,134 +34,183 @@
             <span class="letter">R</span>
             <span class="letter">B</span>
         </a>
-        <div class="frame-container partner-frame">
-            <div class="title">
-                <h1>Nos partenaires</h1>
-            </div>
-            <div class="partner-container">
-                <div class="partner">
-                    <a href="https://www.klub-app.com/" class="logo-link">
+
+    </main>
+
+    
+
+    <div class="frame-container partner-frame">
+        <div class="title">
+            <h1 class="glitch" data-text="Nos partenaires">Nos partenaires</h1>
+        </div>
+        <div class="partner-container">
+                <div class="card">
+                    <h2>Klub</h2>
+                    <p>
                         <img src="assets/partenaires/klub.avif" alt="Klub" class="partner-logo">
-                        <div class="hover-panel">L'application pour faire des économies partout où vous allez | -5€ avec
-                            le code PIRATEIRB</div>
-                    </a>
+                        <br>L'application pour faire des économies partout où vous allez | -5€ avec le code PIRATEIRB
+                    </p>
+                    <a class="btn" href="https://www.klub-app.com/" target="_blank">EXPLORE</a>
                 </div>
-                <div class="partner">
-                    <a href="https://www.karos.fr/" class="logo-link">
+
+                <div class="card">
+                    <h2>Karos</h2>
+                    <p>
                         <img src="assets/partenaires/karos.png" alt="Karos" class="partner-logo">
-                        <div class="hover-panel">Le covoiturage quotidien</div>
-                    </a>
+                        <br>L'application de covoiturage pour les trajets du quotidien
+                    </p>
+                    <a class="btn" href="https://karos.fr/" target="_blank">EXPLORE</a>
                 </div>
-                <div class="partner">
-                    <a href="https://www.passe-montagne.com/" class="logo-link">
-                        <img src="assets/partenaires/passe_montagne.png" alt="Passe du Montagne" class="partner-logo">
-                        <div class="hover-panel">Forfaits de ski à prix réduits | -5€ avec le code PIRATEIRB</div>
-                    </a>
+
+                <div class="card">
+                    <h2>Passe Montagne</h2>
+                    <p>
+                        <img src="assets/partenaires/passe_montagne.png" alt="Passe Montagne" class="partner-logo">
+                        <br>L'application pour faire des économies sur les actis à la montagne | -5€ avec le code PIRATEIRB
+                    </p>
+                    <a class="btn" href="https://www.passemontagne.fr/" target="_blank">EXPLORE</a>
                 </div>
+        </div>
+    </div>
+
+    <div class="frame-container sponsor-frame">
+        <div class="title">
+            <h1 class="glitch" data-text="Nos donateurs">Nos donateurs</h1>
+        </div>
+        <div class="sponsor-container">
+            <div class="card">
+                <h2>Urban Quest</h2>
+                <p>
+                    <img src="assets/partenaires/urban_quest.png" alt="Urban Quest" class="partner-logo">
+                    <br>Le jeu de piste urbain interactif qui transforme la ville de Bordeaux en un immense terrain de jeu
+                </p>
+                <a class="btn" href="https://urbanquest.fr/jeux-de-piste/bordeaux/jeu-de-piste-a-bordeaux/" target="_blank">EXPLORE</a>
+            </div>
+                
+            <div class="card">
+                <h2>Improvidence</h2>
+                <p>
+                    <img src="assets/partenaires/logo-improvidence.svg" alt="Improvidence" class="partner-logo">
+                    <br>Le théâtre d'improvisation
+                </p>
+                <a class="btn" href="https://improvidence.fr/" target="_blank">EXPLORE</a>
+            </div>
+
+            <div class="card">
+                <h2>Jean Eustache</h2>
+                <p>
+                    <img src="assets/partenaires/jean_eustache.png" alt="Jean Eustache" class="partner-logo">
+                    <br>Le tiers-lieu bordelais
+                </p>
+                <a class="btn" href="https://www.webeustache.com/" target="_blank">EXPLORE</a>
+            </div>
+            
+            <div class="card">
+                <h2>Hoops Factory</h2>
+                <p>
+                    <img src="assets/partenaires/hoops_factory.png" alt="Hoops Factory" class="partner-logo">
+                    <br>Le centre de basket indoor
+                </p>
+                <a class="btn" href="https://www.hoopsfactory.com/" target="_blank">EXPLORE</a>
+            </div>
+            
+            <div class="card">
+                <h2>Escape the City</h2>
+                <p>
+                    <img src="assets/partenaires/escape_city.png" alt="Escape the City" class="partner-logo">
+                    <br>Le jeu d'escape game en ville
+                </p>
+                <a class="btn" href="https://escapethecity.fr/" target="_blank">EXPLORE</a>
+            </div>
+
+            <div class="card">
+                <h2>La cité du vin</h2>
+                <p>
+                    <img src="assets/partenaires/cite_du_vin.svg" alt="Cité du Vin" class="partner-logo">
+                    <br>L'univers du vin
+                </p>
+                <a class="btn" href="https://www.laciteduvin.com/fr" target="_blank">EXPLORE</a>
+            </div>
+
+            <div class="card">
+                <h2>Cazcorp</h2>
+                <p>
+                    <img src="assets/partenaires/cazcorp.png" alt="Cazcorp" class="partner-logo">
+                    <br>Monsieur le 5A trop généreux
+                </p>
+                <a class="btn" href="https://www.cazcorp.fr/" target="_blank">EXPLORE</a>
+            </div>
+
+            <div class="card">
+                <h2>Virtual Room</h2>
+                <p>
+                    <img src="assets/partenaires/bordeaux_virtual_room.png" alt="Bordeaux Virtual Room" class="partner-logo">
+                    <br>Réalité virtuelle
+                </p>
+                <a class="btn" href="https://bordeaux.virtual-room.com/" target="_blank">EXPLORE</a>
+            </div>
+
+            <div class="card">
+                <h2>BO & CO Surf</h2>
+                <p>
+                    <img src="assets/partenaires/bo_co_surf.png" alt="BO & CO Surf" class="partner-logo">
+                    <br>École de surf
+                </p>
+                <a class="btn" href="https://bocosurf.com/" target="_blank">EXPLORE</a>
+            </div>
+
+            <div class="card">
+                <h2>L'Estrade</h2>
+                <p>
+                    <img src="assets/partenaires/estrade.svg" alt="L'estrade" class="partner-logo">
+                    <br>Le tiers-lieu de l'innovation sociale
+                </p>
+                <a class="btn" href="https://lestrade.club/" target="_blank">EXPLORE</a>
+            </div>
+
+            <div class="card">
+                <h2>Simfactory</h2>
+                <p>
+                    <img src="assets/partenaires/simfactory.webp" alt="Simfactory" class="partner-logo">
+                    <br>Le tiers-lieu de l'innovation sociale
+                </p>
+                <a class="btn" href="https://www.simfactory.fr/" target="_blank">EXPLORE</a>
+            </div>
+
+            <div class="card">
+                <h2>Swedishfit</h2>
+                <p>
+                    <img src="assets/partenaires/swedishfit.svg" alt="Swedishfit" class="partner-logo">
+                    <br>Le fitness à domicile
+                </p>
+                <a class="btn" href="https://www.swedishfit.fr/" target="_blank">EXPLORE</a>
             </div>
         </div>
+    </div>
 
-        <div class="frame-container sponsor-frame">
-            <div class="title">
-                <h1>Nos donateurs</h1>
+    <div class="frame-container caterer-frame">
+        <div class="title">
+            <h1 class="glitch" data-text="Nos traiteurs">Nos traiteurs</h1>
+        </div>
+        <div class="caterer-container">
+            <div class="card">
+                <h2>Cassonade</h2>
+                <p>
+                    <img src="assets/partenaires/cassonade.jpg" alt="Cassonade" class="partner-logo">
+                    <br>De très bons cannelés
+                </p>
+                <a class="btn" href="https://www.cassonade.fr/" target="_blank">EXPLORE</a>
             </div>
-            <div class="sponsor-container">
-                <div class="sponsor">
-                    <a href="https://urbanquest.fr/jeux-de-piste/bordeaux/jeu-de-piste-a-bordeaux/" class="logo-link">
-                        <img src="assets/partenaires/urban_quest.png" alt="Urban Quest" class="sponsor-logo">
-                        <div class="hover-panel">Jeux de piste urbains</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://www.improvidence.fr/" class="logo-link">
-                        <img src="assets/partenaires/logo-improvidence.svg" alt="Improvidence" class="sponsor-logo">
-                        <div class="hover-panel">Le théâtre d'improvisation</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://www.jean-eustache.fr/" class="logo-link">
-                        <img src="assets/partenaires/jean_eustache.png" alt="Jean Eustache" class="sponsor-logo">
-                        <div class="hover-panel">Cinéma d'art et d'essai</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://www.hoopsfactory.fr/" class="logo-link">
-                        <img src="assets/partenaires/hoops_factory.png" alt="Hoops Factory" class="sponsor-logo">
-                        <div class="hover-panel">Le centre de basket indoor</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://www.escapecity.fr/" class="logo-link">
-                        <img src="assets/partenaires/escape_city.png" alt="Escape City" class="sponsor-logo">
-                        <div class="hover-panel">Escape game palpitant | -15% avec le code : TOMBOLA26</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://www.citeduvin.fr/" class="logo-link">
-                        <img src="assets/partenaires/cite_du_vin.svg" alt="Cité du Vin" class="sponsor-logo">
-                        <div class="hover-panel">L'univers du vin</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://www.cazcorp.com/" class="logo-link">
-                        <img src="assets/partenaires/cazcorp.png" alt="Cazcorp" class="sponsor-logo">
-                        <div class="hover-panel">Notre partenaire tech</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://bordeaux.virtual-room.com/" class="logo-link">
-                        <img src="assets/partenaires/bordeaux_virtual_room.png" alt="Bordeaux Virtual Room"
-                            class="sponsor-logo">
-                        <div class="hover-panel">Réalité virtuelle</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://bocosurf.com/" class="logo-link">
-                        <img src="assets/partenaires/bo_co_surf.webp" alt="BO & CO Surf School" class="sponsor-logo">
-                        <div class="hover-panel">École de surf</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://lestrade.club/" class="logo-link">
-                        <img src="assets/partenaires/estrade.svg" alt="Estrade" class="sponsor-logo">
-                        <div class="hover-panel">Estrade</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://www.simfactory.fr/" class="logo-link">
-                        <img src="assets/partenaires/simfactory.webp" alt="Simfactory" class="sponsor-logo">
-                        <div class="hover-panel">Simfactory</div>
-                    </a>
-                </div>
-                <div class="sponsor">
-                    <a href="https://www.swedishfit.fr/" class="logo-link">
-                        <img src="assets/partenaires/swedishfit.svg" alt="Swedishfit" class="sponsor-logo">
-                        <div class="hover-panel">Swedishfit</div>
-                    </a>
-                </div>
+            
+            <div class="card"> 
+                <h2>Le Kioske à Pizza</h2>
+                <p>
+                    <img src="assets/partenaires/kioske_pizza.png" alt="Le Kioske à Pizza" class="partner-logo">
+                    <br>Les meilleures pizzas
+                </p>
+                <a class="btn" href="https://www.le-kiosque-a-pizzas.com/" target="_blank">EXPLORE</a>
             </div>
         </div>
-
-        <div class="frame-container caterer-frame">
-            <div class="title">
-                <h1>Nos traiteurs</h1>
-            </div>
-            <div class="caterer-container">
-                <div class="caterer">
-                    <a href="https://www.cassonade.fr/" class="logo-link">
-                        <img src="assets/partenaires/cassonade.jpg" alt="Cassonade" class="caterer-logo">
-                        <div class="hover-panel">Traiteur sucré et salé</div>
-                    </a>
-                </div>
-                <div class="caterer">
-                    <a href="https://www.le-kiosque-a-pizzas.com/" class="logo-link">
-                        <img src="assets/partenaires/kioske_pizza.png" alt="Le Kioske à Pizza" class="caterer-logo">
-                        <div class="hover-panel">Les meilleures pizzas</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
+    </div>
 </body>
-
 </html>
