@@ -17,7 +17,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    pointer-events: visibleFill;
+    pointer-events: none;
 }
 .container {
     position: relative;
@@ -176,8 +176,7 @@ section,
 h3 {
   font-family: 'Mr Dafoe';
   margin: 0;
-  font-size: 5.5em;
-  margin-top: -0.6em;
+  font-size: 3em;
   color: #424242;
   text-shadow: 0 0 0.05em #fff;
 }
@@ -189,7 +188,7 @@ h3 {
   transform: translate(-50%, -50%);
   z-index: 99;
   width: min(90%, 420px);
-  background-image: linear-gradient(240deg, #b83c08, rgb(240, 116, 0));
+  background-image: linear-gradient(240deg, #ff7158, #fd2b7b);
   border: 1px solid #ccc;
   border-radius: 12px;
   padding: 20px;

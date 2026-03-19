@@ -1,37 +1,37 @@
 let imgCount = 31
 const cloudUrl = 'https://djjjk9bjm164h.cloudfront.net/'
 const data = [
-  {img: `assets/members/Luca_bis.jpg`, name: 'LE GÉORGIEN ', age: '20', role: 'Président'},
-  {img: `assets/members/Lola_bis.jpg`, name: 'LA SNIPEUSE', age: '20', role: 'Vice-Présidente'},
-  {img: `assets/members/YoannM_bis.jpg`, name: 'LE SNIPER', age: '20', role: 'Vice-Président'},
-  {img: `assets/members/Pierre_bis.jpg`, name: 'CAILLOU', age: '20', role: 'Trésorier'},
-  {img: `assets/members/Clovis_bis.jpg`, name: 'ALL IN', age: '20', role: 'Vice-Trésorier'},
-  {img: `assets/members/YoannE_bis.jpg`, name: '2PAC', age: '20', role: 'Coordonnateur'},
-  {img: `assets/members/Aicha_bis.jpg`, name: 'Deep Fried', age: '20', role: 'Coordonnatrice'},
-  {img: `assets/members/Egshi_bis.jpg`, name: 'EGSHI', age: '20', role: 'Secrétaire'},
-  {img: `assets/members/Abdel_bis.jpg`, name: 'CLUTCH FACTOR', age: '21', role: 'Respo Log'},
-  {img: `assets/members/Timeo_bis.jpg`, name: 'A', age: '20', role: 'Respo Log'},
-  {img: `assets/members/Mourad_bis.jpg`, name: 'MOURADGOAT', age: '20', role: 'Chargé Log'},
-  {img: `assets/members/Thibault_bis.jpg`, name: 'LETHIBZ', age: '21', role: 'Chargé Log'},
-  {img: `assets/members/Sekou_bis.jpg`, name: 'SK', age: '20', role: 'Chargé Log'},
-  {img: `assets/members/Youssef_bis.jpg`, name: 'LE TISMEY ULTIME', age: '20', role: 'Chargé Log'},
-  {img: `assets/members/Alexis_bis.jpg`, name: 'F', age: '20', role: 'Chargé Log'},
-  {img: `assets/members/Adam_bis.jpg`, name: 'PRÉSIDENT DÉCHU', age: '21', role: 'Respo Event'},
-  {img: `assets/members/Samuel_bis.jpg`, name: 'SAM', age: '19', role: 'Respo Event'},
-  {img: `assets/members/Anya_bis.jpg`, name: 'TANA\'NYA', age: '20', role: 'Chargé Event'},
-  {img: `assets/members/Hugo_bis.jpg`, name: 'J', age: '20', role: 'Chargé Event'},
-  {img: `assets/members/Paul_bis.jpg`, name: 'K', age: '20', role: 'Chargé Event'},
-  {img: `assets/members/Nathan_bis.jpg`, name: 'L', age: '20', role: 'Chargé Event'},
-  {img: `assets/members/Armel_bis.jpg`, name: 'AJOURNÉ', age: '20', role: 'Chargé Event'},
-  {img: `assets/members/Theophile_bis.jpg`, name: 'TOLEAF', age: '21', role: 'Respo Com'},
-  {img: `assets/members/Jules_bis.jpg`, name: 'O', age: '21', role: 'Chargé Com'},
-  {img: `assets/members/Alexandre_bis.jpg`, name: 'BURGER', age: '21', role: 'Chargé Com'},
-  {img: `assets/members/Gabriel_bis.jpg`, name: 'SINGE', age: '20', role: 'Respo Part'},
-  {img: `assets/members/Clarysse_bis.jpg`, name: 'CLACLOU', age: '20', role: 'Chargé Part'},
-  {img: `assets/members/Irina_bis.jpg`, name: 'IRINA(SOA)', age: '20', role: 'Chargé Part'},
-  {img: `assets/members/Ange_bis.jpg`, name: 'DÉMON', age: '20', role: 'Chargé Part'},
-  {img: `assets/members/Tristan_bis.jpg`, name: 'MATHIS', age: '20', role: 'Respo Bar'},
-  {img: `assets/members/Matisse_bis.jpg`, name: 'TRISTAN', age: '20', role: 'Chargé Bar'},
+  {img: `assets/members/Luca_bis.jpg`, name: 'LE GÉORGIEN ', age: '20', qg: 'Talence'},
+  {img: `assets/members/Lola_bis.jpg`, name: 'LA SNIPEUSE', age: '20', qg: 'Bordeaux'},
+  {img: `assets/members/YoannM_bis.jpg`, name: 'LE SNIPER', age: '20', qg: 'Bordeaux'},
+  {img: `assets/members/Pierre_bis.jpg`, name: 'CAILLOU', age: '20', qg: 'Bordeaux'},
+  {img: `assets/members/Clovis_bis.jpg`, name: 'ALL IN', age: '20', qg: 'Bordeaux'},
+  {img: `assets/members/YoannE_bis.jpg`, name: '2PAC', age: '20', qg: 'Bordeaux'},
+  {img: `assets/members/Aicha_bis.jpg`, name: 'CR7 2017-2019', age: '20', qg: 'Bordeaux'},
+  {img: `assets/members/Egshi_bis.jpg`, name: 'EGSHI', age: '20', qg: 'Pessac'},
+  {img: `assets/members/Abdel_bis.jpg`, name: 'CLUTCH FACTOR', age: '21', qg: 'Pessac'},
+  {img: `assets/members/Timeo_bis.jpg`, name: 'TRIPLE T', age: '20', qg: 'Pessac'},
+  {img: `assets/members/Mourad_bis.jpg`, name: 'MOURADGOAT', age: '20', qg: 'Pessac'},
+  {img: `assets/members/Thibault_bis.jpg`, name: 'LETHIBZ', age: '21', qg: 'Talence'},
+  {img: `assets/members/Sekou_bis.jpg`, name: 'SK', age: '20', qg: 'Talence'},
+  {img: `assets/members/Youssef_bis.jpg`, name: 'LION D. YOUSSEF', age: '20', qg: 'Pessac'},
+  {img: `assets/members/Alexis_bis.jpg`, name: 'TITI', age: '20', qg: 'Pesasac'},
+  {img: `assets/members/Adam_bis.jpg`, name: 'PRÉSIDENT DÉCHU', age: '21', qg: 'Pessac'},
+  {img: `assets/members/Samuel_bis.jpg`, name: 'SAM', age: '19', qg: 'Talence'},
+  {img: `assets/members/Anya_bis.jpg`, name: 'TANA\'NYA', age: '20', qg: 'Bordeaux'},
+  {img: `assets/members/Hugo_bis.jpg`, name: 'CALCULATRICE', age: '20', qg: 'Talence'},
+  {img: `assets/members/Paul_bis.jpg`, name: 'LE TISMEY ULTIME', age: '20', qg: 'Talence'},
+  {img: `assets/members/Nathan_bis.jpg`, name: 'GATOUZ', age: '20', qg: 'Talence'},
+  {img: `assets/members/Armel_bis.jpg`, name: 'AJOURNÉ', age: '21', qg: 'Talence'},
+  {img: `assets/members/Theophile_bis.jpg`, name: 'TOLEAF', age: '21', qg: 'Bordeaux'},
+  {img: `assets/members/Jules_bis.jpg`, name: 'RESPO FORTNITE', age: '21', qg: 'Pessac'},
+  {img: `assets/members/Alexandre_bis.jpg`, name: 'BURGER', age: '21', qg: 'Talence'},
+  {img: `assets/members/Gabriel_bis.jpg`, name: 'SINGE', age: '20', qg: 'Pessac'},
+  {img: `assets/members/Clarysse_bis.jpg`, name: 'CLACLOU', age: '20', qg: 'Talence'},
+  {img: `assets/members/Irina_bis.jpg`, name: 'IRINA(SOA)', age: '20', qg: 'Pessac'},
+  {img: `assets/members/Ange_bis.jpg`, name: 'DÉMON', age: '20', qg: 'Talence'},
+  {img: `assets/members/Tristan_bis.jpg`, name: 'TITIPOURLESINTIMES', age: '20', qg: 'Talence'},
+  {img: `assets/members/Matisse_bis.jpg`, name: 'SID', age: '20', qg: 'Bordeaux'},
 
 ]
 const frame = document.body.querySelector('.frame')
@@ -66,7 +66,7 @@ function appendCard(data) {
               <span>${data.age}<b> ans</b></span>
             </div>
             <div class="info">
-              ${data.role}
+              <span>sur le QG ${data.qg}</span>
             </div>
           </div>
         `
