@@ -17,7 +17,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    pointer-events: none;
+    pointer-events: visible;
 }
 .container {
     position: relative;
@@ -116,7 +116,7 @@ section,
 }
 
 .card .like::after {
-  content: "COHéSION";
+  content: "YUMM";
   color: #4dca93;
   border: 0.1em solid #4dca93;
 }
@@ -194,10 +194,18 @@ h3 {
   padding: 20px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   display: none;
+  text-align: center;
 }
 
 h1 {
   text-align: center;
+}
+
+.members_row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .member {
@@ -206,4 +214,11 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.member_photo {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }

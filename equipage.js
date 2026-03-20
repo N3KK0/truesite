@@ -4,7 +4,7 @@ const data = [
   {img: `assets/members/Luca_bis.jpg`, name: 'LE GÉORGIEN ', age: '20', qg: 'Talence'},
   {img: `assets/members/Lola_bis.jpg`, name: 'LA SNIPEUSE', age: '20', qg: 'Bordeaux'},
   {img: `assets/members/YoannM_bis.jpg`, name: 'LE SNIPER', age: '20', qg: 'Bordeaux'},
-  {img: `assets/members/Pierre_bis.jpg`, name: 'CAILLOU', age: '20', qg: 'Bordeaux'},
+  {img: `assets/members/Pierre_bis.jpg`, name: 'CAILLOU', age: '21', qg: 'Bordeaux'},
   {img: `assets/members/Clovis_bis.jpg`, name: 'ALL IN', age: '20', qg: 'Bordeaux'},
   {img: `assets/members/YoannE_bis.jpg`, name: '2PAC', age: '20', qg: 'Bordeaux'},
   {img: `assets/members/Aicha_bis.jpg`, name: 'CR7 2017-2019', age: '20', qg: 'Bordeaux'},
